@@ -2,17 +2,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EmotionRecognitionUI.ViewModels"
+             xmlns:pages="clr-namespace:EmotionRecognitionUI.Pages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EmotionRecognitionUI.Pages.MenuPage"
-             Foreground="White">
+             x:Class="EmotionRecognitionUI.Pages.MenuPage">
     
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Главная"
-                       FontSize="16"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       />
-        </StackPanel>
+        <TabControl TabStripPlacement="Left"
+                    Items="{Binding MenuItems}"
+                    SelectedItem="{Binding SelectedItem}"
+        >
+
+
+            <TabControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type viewModels:MenuItemViewModel}">
+                    <pages:MenuItem/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            
+
+            <Interaction.Behaviors>
+                <EventTriggerBehavior EventName="SelectionChanged">
+                    <InvokeCommandAction Command="{Binding SelectMenuItemCommand}"
+                                         CommandParameter="{Binding AddedItems}"
+                                         PassEventArgsToCommand="True"/>
+                </EventTriggerBehavior>
+            </Interaction.Behaviors>
+        </TabControl>
+
     </Grid>
 </UserControl>

@@ -15,7 +15,8 @@
                 HorizontalAlignment="Center"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                CornerRadius="10">
+                CornerRadius="10"
+                Command="{Binding StartTrainingCommand}">
         </Button>
     </Grid>
 </UserControl>
