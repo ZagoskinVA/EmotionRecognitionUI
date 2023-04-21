@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Avalonia.Controls;
 using EmotionRecognitionUI.Events;
+using EmotionRecognitionUI.Services;
 using Prism.Commands;
 using Prism.Events;
 
@@ -10,10 +11,12 @@ public class HomeViewModel: ViewModelBase
 {
     public string Greeting { get; set; } = "Тренажёр для определения эмоций!";
     private IEventAggregator _eventAggregator;
+    private readonly TrainingViewModel _trainingViewModel;
     public ICommand StartTrainingCommand { get; }
 
-    public HomeViewModel(IEventAggregator eventAggregator)
+    public HomeViewModel(IEventAggregator eventAggregator, TrainingViewModel trainingViewModel)
     {
+        _trainingViewModel = trainingViewModel;
         _eventAggregator = eventAggregator;
         StartTrainingCommand = new DelegateCommand(OnStartTraining);
     }
@@ -23,7 +26,7 @@ public class HomeViewModel: ViewModelBase
     {
         _eventAggregator.GetEvent<MenuItemSelectedEvent>()
             .Publish(new SelectionChangedEventArgs(null, null,
-                new[] {new MenuItemViewModel("Тренажёр", 
-                    new TrainingViewModel(), _eventAggregator) { }}));
+                new[] {new MenuItemViewModel("Тренажёр",
+                    _trainingViewModel, _eventAggregator) { }}));
     }
 }

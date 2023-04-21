@@ -3,6 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:viewModels="clr-namespace:EmotionRecognitionUI.ViewModels"
+             xmlns:pages="clr-namespace:EmotionRecognitionUI.Pages"
              x:Class="EmotionRecognitionUI.Pages.TrainingPage">
-    Welcome to Avalonia!
+    
+
+    <ContentControl Content="{Binding CurrentPage}">
+        <ContentControl.DataTemplates>
+            <DataTemplate DataType="{x:Type viewModels:GameViewModel}">
+                <pages:GamePage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:ResultViewModel}">
+                <pages:ResultPage/>
+            </DataTemplate>
+        </ContentControl.DataTemplates>
+    </ContentControl>
 </UserControl>

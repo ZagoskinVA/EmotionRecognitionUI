@@ -1,0 +1,30 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EmotionRecognitionUI.Pages.ResultPage">
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="MinWidth" Value="200"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0 0 0 4"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
+    </UserControl.Styles>
+    <Grid RowDefinitions="2* *">
+        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Score}"></TextBlock>
+            <TextBlock Text="{Binding Accuracy}"></TextBlock>
+        </StackPanel>
+
+        <Button Grid.Row="1" Content="Начать сначала ?" Command="{Binding RefreshCommand}"></Button>
+    </Grid>
+</UserControl>

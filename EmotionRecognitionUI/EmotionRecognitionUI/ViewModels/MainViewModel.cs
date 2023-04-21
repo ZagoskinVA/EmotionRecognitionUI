@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using EmotionRecognitionUI.Events;
+using EmotionRecognitionUI.Services;
 using Prism.Commands;
 using Prism.Events;
 using ReactiveUI;
@@ -46,13 +47,14 @@ public class MainViewModel : ViewModelBase
     public MainViewModel(IEventAggregator eventAggregator)
     {
         eventAggregator.GetEvent<MenuMovingEvent>().Subscribe(OnMenuMoving);
-        
-        CurrentContentPage = new HomeViewModel(eventAggregator);
+
+        var trainingViewModel = new TrainingViewModel(eventAggregator, new YandexDriveService());
+        CurrentContentPage = new HomeViewModel(eventAggregator, trainingViewModel);
         
         MenuPage = new MenuViewModel(eventAggregator, new ObservableCollection<MenuItemViewModel>()
         {
-            new MenuItemViewModel("Главная", new HomeViewModel(eventAggregator), eventAggregator),
-            new MenuItemViewModel("Тренажёр", new TrainingViewModel(), eventAggregator)
+            new MenuItemViewModel("Главная", new HomeViewModel(eventAggregator, trainingViewModel), eventAggregator),
+            new MenuItemViewModel("Тренажёр", trainingViewModel, eventAggregator)
         });
         
         ChangePaneCommand = new DelegateCommand(OnChangePane);

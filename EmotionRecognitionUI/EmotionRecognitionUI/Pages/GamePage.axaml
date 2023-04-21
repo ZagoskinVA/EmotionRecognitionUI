@@ -1,0 +1,46 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EmotionRecognitionUI.Pages.GamePage">
+    
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0 0 0 4"></Setter>
+            <Setter Property="MinWidth" Value="150"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Command" Value="{Binding ChooseLabelCommand}"></Setter>
+            <Setter Property="IsEnabled" Value="{Binding Image, Converter={x:Static ObjectConverters.IsNotNull}}"></Setter>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="* 1.5* Auto">
+        <TextBlock Grid.Row="0" Text="{Binding Scoring}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" Spacing="5" Width="200">
+            <Border CornerRadius="10" ClipToBounds="True">
+                <Panel Background="#7FFF22DD">
+                    <Image Width="200" Stretch="Uniform" Source="{Binding Image}" />
+                    <Panel Height="200" Background="#171C2C" IsVisible="{Binding Image, Converter={x:Static ObjectConverters.IsNull}}">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Данные загружаются"></TextBlock>
+                    </Panel>
+                </Panel>
+            </Border>
+        </StackPanel>
+        
+        <Grid Grid.Row="2" RowDefinitions="* * * *" ColumnDefinitions="* *">
+            <Button Grid.Row="0" Grid.Column="0" Content="Радость" CommandParameter="Радость"></Button>
+            <Button Grid.Row="0" Grid.Column="1" Content="Презрение" CommandParameter="Презрение" ></Button>
+            <Button Grid.Row="1" Grid.Column="0" Content="Отвращение" CommandParameter="Отвращение"></Button>
+            <Button Grid.Row="1" Grid.Column="1" Content="Гнев" CommandParameter="Гнев"></Button>
+            <Button Grid.Row="2" Grid.Column="0" Content="Печаль" CommandParameter="Печаль"></Button>
+            <Button Grid.Row="2" Grid.Column="1" Content="Удивление" CommandParameter="Удивление"></Button>
+            <Grid Grid.Row="3" ColumnSpan="2">
+                <Button  Grid.Column="0" Content="Страх" CommandParameter="Страх"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
