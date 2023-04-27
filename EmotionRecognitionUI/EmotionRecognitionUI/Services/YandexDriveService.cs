@@ -24,7 +24,7 @@ public class YandexDriveService: IYandexDriveService
     private readonly string _basePath;
     private string[] emotions = {"гнев", "отвращение", "печаль", "презрение", "радость", "страх", "удивление"};
     private Dictionary<string, string[]> _fileNames = new();
-    private const string _token = "";
+    private const string _token = "y0_AgAAAABID1eJAADLWwAAAADeCQgtmljootw6TvC6esBBaw7-tqNrhEM";
 
 
     public YandexDriveService()

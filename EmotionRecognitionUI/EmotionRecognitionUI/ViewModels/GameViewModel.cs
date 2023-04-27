@@ -73,26 +73,37 @@ public class GameViewModel: ViewModelBase
     private async Task LoadImagesAsync()
     {
         var images = await _yandexDriveService.Get(2);
+        
         _images = images.ToList();
         Image = _images.First().Image;
         ImageIndex = 0;
         ImageCount = _images.Count;
     }
 
-    public void OnChooseLabel(string label)
+    public void MoveToNextImage()
     {
-        _answers.Add(label);
         if(ImageIndex == ImageCount - 1)
         {
-            _eventAggregator.GetEvent<ShowResultEvent>().Publish(new ScoringModel()
-            {
-                CorrectAnswers = _images.Select(x => x.Label).Zip(_answers).Count(x => x.First.ToLower() == x.Second.ToLower()),
-                AnswersCount = _answers.Count
-            });
+            OpenScorePage();
             return;
         }
         ImageIndex += 1;
         Image = _images[ImageIndex].Image;
+    }
+
+    private void OpenScorePage()
+    {
+        _eventAggregator.GetEvent<ShowResultEvent>().Publish(new ScoringModel()
+        {
+            CorrectAnswers = _images.Select(x => x.Label).Zip(_answers).Count(x => x.First.ToLower() == x.Second.ToLower()),
+            AnswersCount = _answers.Count
+        });
+    }
+
+    public void OnChooseLabel(string label)
+    {
+        _eventAggregator.GetEvent<OpenAnswerPageEvent>().Publish(label.ToLower() == _images[ImageIndex].Label.ToLower());
+        _answers.Add(label);
     }
     
     private void UpdateScoring()

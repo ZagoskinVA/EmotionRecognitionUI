@@ -8,9 +8,10 @@
         <Style Selector="Button">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="MinWidth" Value="200"></Setter>
+            <Setter Property="MinWidth" Value="155"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="MinHeight" Value="55"></Setter>
         </Style>
         <Style Selector="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>

@@ -16,6 +16,9 @@
             <DataTemplate DataType="{x:Type viewModels:ResultViewModel}">
                 <pages:ResultPage/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:AnswerViewModel}">
+                <pages:AnswerPage></pages:AnswerPage>
+            </DataTemplate>
         </ContentControl.DataTemplates>
     </ContentControl>
 </UserControl>

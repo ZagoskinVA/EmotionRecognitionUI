@@ -10,8 +10,9 @@
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Margin" Value="0 0 0 4"></Setter>
-            <Setter Property="MinWidth" Value="150"></Setter>
+            <Setter Property="MinWidth" Value="155"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="MinHeight" Value="55"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="Command" Value="{Binding ChooseLabelCommand}"></Setter>
             <Setter Property="IsEnabled" Value="{Binding Image, Converter={x:Static ObjectConverters.IsNotNull}}"></Setter>
