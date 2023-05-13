@@ -35,10 +35,10 @@ public class TrainingViewModel : ViewModelBase
         CurrentPage = new ResultViewModel(scoringModel, _eventAggregator);
     }
 
-    private void OnOpenAnswerPage(bool isCorrect)
+    private void OnOpenAnswerPage(AnswerModel answer)
     {
         GamePage = CurrentPage;
-        CurrentPage = new AnswerViewModel(_eventAggregator, isCorrect);
+        CurrentPage = new AnswerViewModel(_eventAggregator, answer.IsCorrect, answer.CorrectAnswer);
     }
 
     private void OnRefreshTraining()

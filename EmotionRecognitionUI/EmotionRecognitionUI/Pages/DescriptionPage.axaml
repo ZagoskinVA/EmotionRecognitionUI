@@ -1,0 +1,229 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EmotionRecognitionUI.Pages.DescriptionPage">
+    <UserControl.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        </Style>
+    </UserControl.Styles>
+    <ScrollViewer>
+        <Grid RowDefinitions="Auto * * *">
+            <TextBlock Grid.Row="0" Text="Основные признаки эмоций" FontStyle="Oblique" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="#e8d509"
+                       FontSize="18"></TextBlock>
+            <StackPanel Grid.Row="1">
+                <TextBlock 
+                    FontSize="18"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#e8d509"
+                    Text="Внимание! Следует помнить, что:"/>
+                <TextBlock
+                    Margin="8 0  0 8"
+                    Text="1.Искажать проявления эмоций могут хирургические вмешательства (пластическая хирургия или последствия травм), мимические реакции на особенности освещения (слишком яркого или слишком темного), возрастные мимические морщины."/>
+                <TextBlock
+                    Margin="8 0  0 8"
+                    Text="2.Хотя маркеры эмоций универсальны для любой расы или возраста, ни один из отдельно взятых признаков эмоций не является гарантией проявления именно этой эмоции, признаки нужно анализировать в комплексе. По одному признаку нельзя сделать вывод о наличии эмоции."/>
+                <TextBlock
+                    Margin="8 0  0 8"
+                    Text="3.Более эффективно определить эмоциональное состояние человека можно учитывая фоновую жизненную ситуацию, обстоятельства ее возникновения; обращая внимание на тон голоса человека и особенности интонации."></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Радость"/>
+                <TextBlock
+                    Margin="8 0  0 0"
+                    Text="+Улыбка."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Задействованы круговые мышц глаз: появляются морщинки вокруг глаз «куриные лапки»."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Щеки расположены чуть выше, брови слегка опущены вниз."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Удивление"/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Самая краткая эмоция, искреннее удивление длится несколько секунд."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Раскрытые глаза."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Приподнятые брови."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Нижняя челюсть опущена вниз."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Печаль"/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Приоткрытый рот."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Опущенные вниз уголки губ."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Приподнятые щеки."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Опущенные верхние веки, брови «домиком» (внутренние уголки бровей приподняты)."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Вертикальная морщина между бровей (при сильной эмоции)."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Губы вытянуты горизонтально или уголки губ опущены."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Презрение"/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Ощущение морального превосходства. «Я лучше, чем вы»."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Приподнят подбородок."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Напряжение в одном из уголков рта (односторонняя полуулыбка)."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Губы могут быть приоткрыты с одной стороны рта."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Отвращение"/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Ощущение тошнотворного запаха, вкуса, события. «Противно»."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Верхняя губа приподнята."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Нижняя губа приподнята и выдвинута вперед."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Морщины на переносице (наморщен нос)."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Морщинки вокруг глаз."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Страх"/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Наличие физической или моральной угрозы."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Возможны закрытые глаза."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Возможны широко раскрытые, напряженные глаза."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Опущенные брови."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Напряжено растянутые губы."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Опущенная нижняя челюсть."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Приподнятые верхние веки."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Напряженные нижние веки."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Возможны высоко поднятые сведенные брови."/>
+                
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 8  0 0"
+                           Text="Гнев"/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Может быть предшественником проявления физического или вербального насилия (действия или гневная речь)."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Брови опущены вниз, сведены вместе, внутренние уголки сдвинуты ближе к носу."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Широко открыты глаза, пристальный взгляд."></TextBlock>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="+Плотно сжатые напряженные губы (сжатые зубы)."/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="3">
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18"
+                           Foreground="#e8d509"
+                           Margin="0 12  0 0"
+                           Text="Упражнение "/>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="17"
+                           Text="Как понимать свои и чужие эмоции лучше?"/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="Актеры учатся достоверно изображать эмоции, обращаясь к пережитому опыту и вспоминая момент своей жизни, связанный с конкретным эмоциональным состоянием. "/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="Они позволяют себе заново погрузиться в эмоцию и дают ей отразиться на лице."/>
+                
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="Попробуйте вспомнить ситуацию, связанную с той или иной эмоцией (например, радостью) и, глядя в зеркало, понаблюдайте и проанализируйте изменения, которые происходят в момент эмоции в мимических мышцах лица."/>
+                <TextBlock 
+                    Margin="8 0  0 0"
+                    Text="Последовательно вспомните ситуацию и понаблюдайте за своим лицом для каждой из семи эмоций:"/>
+                <TextBlock
+                    Foreground="#e8d509"
+                    Margin="8 0  0 0"
+                    Text="Радость, Удивление, Печаль, Презрение, Отвращение, Страх, Гнев"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

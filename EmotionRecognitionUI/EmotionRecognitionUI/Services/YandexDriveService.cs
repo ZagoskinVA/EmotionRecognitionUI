@@ -22,7 +22,7 @@ public class YandexDriveService: IYandexDriveService
 {
     private readonly IDiskApi _diskApi;
     private readonly string _basePath;
-    private string[] emotions = {"гнев", "отвращение", "печаль", "презрение", "радость", "страх", "удивление"};
+    private string[] emotions = {"гнев", "отвращение", "печаль", "презрение", "радость", "страх", "удивление", "страх_удивление"};
     private Dictionary<string, string[]> _fileNames = new();
     private const string _token = "y0_AgAAAABID1eJAADLWwAAAADeCQgtmljootw6TvC6esBBaw7-tqNrhEM";
 
