@@ -19,6 +19,7 @@ public class SplashActivity : AvaloniaSplashActivity<App>
 
     protected override void OnCreate(Bundle? savedInstanceState)
     {
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         base.OnCreate(savedInstanceState);
     }
 

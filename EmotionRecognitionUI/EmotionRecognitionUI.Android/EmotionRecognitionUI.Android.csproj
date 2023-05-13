@@ -18,10 +18,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\EmotionRecognitionUI\EmotionRecognitionUI.csproj"/>
+        <ProjectReference Include="..\EmotionRecognitionUI\EmotionRecognitionUI.csproj" />
     </ItemGroup>
 </Project>
