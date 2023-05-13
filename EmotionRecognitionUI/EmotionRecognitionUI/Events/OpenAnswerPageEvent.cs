@@ -1,8 +1,9 @@
-﻿using Prism.Events;
+﻿using EmotionRecognitionUI.Models;
+using Prism.Events;
 
 namespace EmotionRecognitionUI.Events;
 
-public class OpenAnswerPageEvent: PubSubEvent<bool>
+public class OpenAnswerPageEvent: PubSubEvent<AnswerModel>
 {
     
 }

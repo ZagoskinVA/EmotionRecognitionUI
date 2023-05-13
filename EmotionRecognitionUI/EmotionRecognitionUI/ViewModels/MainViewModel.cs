@@ -54,6 +54,7 @@ public class MainViewModel : ViewModelBase
         MenuPage = new MenuViewModel(eventAggregator, new ObservableCollection<MenuItemViewModel>()
         {
             new MenuItemViewModel("Главная", new HomeViewModel(eventAggregator, trainingViewModel), eventAggregator),
+            new MenuItemViewModel("Маркеры эмоций", new DescriptionViewModel(), eventAggregator),
             new MenuItemViewModel("Тренажёр", trainingViewModel, eventAggregator)
         });
         

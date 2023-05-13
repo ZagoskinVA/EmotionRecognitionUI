@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ public class GameViewModel: ViewModelBase
     private int _imageCount = 0;
     private string _scoring ="";
     private List<string> _answers;
+    private readonly Random _random = new Random();
     public ICommand ChooseLabelCommand { get; }
 
     public Bitmap? Image
@@ -74,7 +76,7 @@ public class GameViewModel: ViewModelBase
     {
         var images = await _yandexDriveService.Get(2);
         
-        _images = images.ToList();
+        _images = images.OrderBy(x => _random.Next()).ToList();
         Image = _images.First().Image;
         ImageIndex = 0;
         ImageCount = _images.Count;
@@ -95,14 +97,18 @@ public class GameViewModel: ViewModelBase
     {
         _eventAggregator.GetEvent<ShowResultEvent>().Publish(new ScoringModel()
         {
-            CorrectAnswers = _images.Select(x => x.Label).Zip(_answers).Count(x => x.First.ToLower() == x.Second.ToLower()),
+            CorrectAnswers = _images.Select(x => x.Label).Zip(_answers).Count(x => (x.First.ToLower().Contains(x.Second.ToLower()))),
             AnswersCount = _answers.Count
         });
     }
 
     public void OnChooseLabel(string label)
     {
-        _eventAggregator.GetEvent<OpenAnswerPageEvent>().Publish(label.ToLower() == _images[ImageIndex].Label.ToLower());
+        _eventAggregator.GetEvent<OpenAnswerPageEvent>().Publish(new AnswerModel()
+        {
+            IsCorrect = label.ToLower() == _images[ImageIndex].Label.ToLower(),
+            CorrectAnswer = _images[ImageIndex].Label.ToLower()
+        });
         _answers.Add(label);
     }
     

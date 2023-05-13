@@ -13,11 +13,11 @@ public class AnswerViewModel: ViewModelBase
 
     private readonly IEventAggregator _eventAggregator;
 
-    public AnswerViewModel(IEventAggregator eventAggregator, bool isCorrect)
+    public AnswerViewModel(IEventAggregator eventAggregator, bool isCorrect, string correctAnswer)
     {
         _eventAggregator = eventAggregator;
         CloseAnswerCommand = new DelegateCommand(OnCloseAnswer);
-        Result = isCorrect ? "Ответ правильный" : "Вы не угадали";
+        Result = isCorrect ? "Ответ правильный" : $"Вы не угадали. Правильный ответ {correctAnswer}";
     }
 
     private void OnCloseAnswer()
