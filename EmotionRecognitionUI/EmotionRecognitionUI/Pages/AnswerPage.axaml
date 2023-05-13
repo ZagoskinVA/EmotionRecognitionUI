@@ -9,7 +9,8 @@
                    HorizontalAlignment="Center" 
                    Grid.Row="0" 
                    Text="{Binding Result}"
-                   FontSize="15">
+                   FontSize="15"
+                   TextWrapping="WrapWithOverflow">
             
         </TextBlock>
         

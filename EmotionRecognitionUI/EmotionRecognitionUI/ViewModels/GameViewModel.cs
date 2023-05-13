@@ -106,7 +106,7 @@ public class GameViewModel: ViewModelBase
     {
         _eventAggregator.GetEvent<OpenAnswerPageEvent>().Publish(new AnswerModel()
         {
-            IsCorrect = label.ToLower() == _images[ImageIndex].Label.ToLower(),
+            IsCorrect = _images[ImageIndex].Label.ToLower().Contains(label.ToLower()),
             CorrectAnswer = _images[ImageIndex].Label.ToLower()
         });
         _answers.Add(label);
