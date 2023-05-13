@@ -43,6 +43,10 @@ public class TrainingViewModel : ViewModelBase
 
     private void OnRefreshTraining()
     {
+        _eventAggregator.GetEvent<ShowResultEvent>().Unsubscribe(OnShowResult);
+        _eventAggregator.GetEvent<RefreshTrainingEvent>().Unsubscribe(OnRefreshTraining);
+        _eventAggregator.GetEvent<CloseAnswerPageEvent>().Unsubscribe(OnCloseAnswerPage);
+        _eventAggregator.GetEvent<OpenAnswerPageEvent>().Unsubscribe(OnOpenAnswerPage);
         CurrentPage = new TrainingViewModel(_eventAggregator, _yandexDriveService);
     }
     
