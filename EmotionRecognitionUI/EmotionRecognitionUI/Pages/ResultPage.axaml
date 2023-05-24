@@ -18,6 +18,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Margin" Value="0 0 0 4"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Foreground" Value="{Binding TextBoxForeground}"></Setter>
         </Style>
     </UserControl.Styles>
     <Grid RowDefinitions="2* *">

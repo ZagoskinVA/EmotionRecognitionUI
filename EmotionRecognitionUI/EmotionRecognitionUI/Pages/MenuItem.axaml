@@ -6,10 +6,9 @@
              x:Class="EmotionRecognitionUI.Pages.MenuItem">
     <Grid>
         <TextBlock Text="{Binding Choice}"
-                   FontSize="16"
+                   FontSize="20"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
-                   Foreground="#2596be"
                    TextWrapping="WrapWithOverflow"
         /> 
     </Grid>

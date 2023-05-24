@@ -20,13 +20,14 @@
     </UserControl.Styles>
     
     <Grid RowDefinitions="* 1.5* Auto">
-        <TextBlock Grid.Row="0" Text="{Binding Scoring}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding Scoring}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Foreground="{Binding TextBoxForeground}"></TextBlock>
         <StackPanel Grid.Row="1" Spacing="5" Width="315">
             <Border CornerRadius="10" ClipToBounds="True">
-                <Panel Background="#171C2C">
+                <Panel>
                     <Image Width="315" Height="275" Stretch="Uniform" Source="{Binding Image}" />
-                    <Panel Width="315" Height="275" Background="#171C2C" IsVisible="{Binding Image, Converter={x:Static ObjectConverters.IsNull}}">
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Данные загружаются"></TextBlock>
+                    <Panel Width="315" Height="275" IsVisible="{Binding Image, Converter={x:Static ObjectConverters.IsNull}}">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Данные загружаются" Foreground="{Binding TextBoxForeground}"></TextBlock>
                     </Panel>
                 </Panel>
             </Border>

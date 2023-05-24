@@ -6,8 +6,9 @@
              x:Class="EmotionRecognitionUI.Pages.DescriptionPage">
     <UserControl.Styles>
         <Style Selector="TextBlock">
-            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
             <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+            <Setter Property="Foreground" Value="{Binding TextBoxForeground}"></Setter>
         </Style>
     </UserControl.Styles>
     <ScrollViewer>
@@ -15,14 +16,12 @@
             <TextBlock Grid.Row="0" Text="Основные признаки эмоций" FontStyle="Oblique" 
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       Foreground="#e8d509"
-                       FontSize="18"></TextBlock>
+                       FontSize="28"></TextBlock>
             <StackPanel Grid.Row="1">
                 <TextBlock 
-                    FontSize="18"
+                    FontSize="28"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Foreground="#e8d509"
                     Text="Внимание! Следует помнить, что:"/>
                 <TextBlock
                     Margin="8 0  0 8"
@@ -37,8 +36,7 @@
             <StackPanel Grid.Row="2">
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Радость"/>
                 <TextBlock
@@ -53,13 +51,12 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Удивление"/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Самая краткая эмоция, искреннее удивление длится несколько секунд."/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -73,8 +70,7 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Печаль"/>
                 <TextBlock 
@@ -98,13 +94,12 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Презрение"/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Ощущение морального превосходства. «Я лучше, чем вы»."/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -118,13 +113,12 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Отвращение"/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Ощущение тошнотворного запаха, вкуса, события. «Противно»."/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -141,13 +135,12 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Страх"/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Наличие физической или моральной угрозы."/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -176,13 +169,12 @@
                 
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 8  0 0"
                            Text="Гнев"/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Может быть предшественником проявления физического или вербального насилия (действия или гневная речь)."/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -198,13 +190,12 @@
             <StackPanel Grid.Row="3">
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="18"
-                           Foreground="#e8d509"
+                           FontSize="28"
                            Margin="0 12  0 0"
                            Text="Упражнение "/>
                 <TextBlock HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="17"
+                           FontSize="26"
                            Text="Как понимать свои и чужие эмоции лучше?"/>
                 <TextBlock 
                     Margin="8 0  0 0"
@@ -220,7 +211,6 @@
                     Margin="8 0  0 0"
                     Text="Последовательно вспомните ситуацию и понаблюдайте за своим лицом для каждой из семи эмоций:"/>
                 <TextBlock
-                    Foreground="#e8d509"
                     Margin="8 0  0 0"
                     Text="Радость, Удивление, Печаль, Презрение, Отвращение, Страх, Гнев"/>
             </StackPanel>

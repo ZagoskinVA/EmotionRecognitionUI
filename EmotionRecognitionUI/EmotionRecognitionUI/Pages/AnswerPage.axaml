@@ -4,17 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EmotionRecognitionUI.Pages.AnswerPage">
-    <Grid RowDefinitions="* *">
+    <Grid RowDefinitions="* * *">
         <TextBlock VerticalAlignment="Center" 
                    HorizontalAlignment="Center" 
                    Grid.Row="0" 
                    Text="{Binding Result}"
                    FontSize="15"
+                   Foreground="{Binding TextBoxForeground}"
                    TextWrapping="WrapWithOverflow">
             
         </TextBlock>
         
-        <Button Grid.Row="1" Content="Ok" 
+        <Image Grid.Row="1" Width="315" Height="275" Stretch="Uniform" Source="{Binding Image}" />
+        
+        <Button Grid.Row="2" Content="Ok" 
                 Command="{Binding CloseAnswerCommand}" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" 

@@ -4,10 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:EmotionRecognitionUI.ViewModels"
              xmlns:pages="clr-namespace:EmotionRecognitionUI.Pages"
+             xmlns:services="clr-namespace:EmotionRecognitionUI.Services"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EmotionRecognitionUI.Views.MainView"
-             Foreground="White"
-             Background="#171C2C">
+             x:Class="EmotionRecognitionUI.Views.MainView">
     
     
         
@@ -35,16 +34,25 @@
 
         <Grid ColumnDefinitions="Auto *">
             <Grid
-                Grid.Column="0" 
-                Background="#171717">
-                <Button
+                Grid.Column="0" RowDefinitions="* Auto">
+                <Button Grid.Row="0"
                         Command="{Binding ChangePaneCommand}" 
                         VerticalAlignment="Top"
                         Width="32"
                         Height="32"
-                        Background="#171717"
-                        >
+                >
                     <Image Source="/Assets/bars-solid.ico"></Image>
+                </Button>
+                
+                <Button Grid.Row="1"
+                              Width="32"
+                              Height="32"
+                              HorizontalAlignment="Stretch"
+                              VerticalContentAlignment="Stretch"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Command="{Binding ChangeModeCommand}">
+                    <Image Source="/Assets/lightbulb-regular.png"></Image>
                 </Button>
             </Grid>
             <Grid Grid.Column="1">

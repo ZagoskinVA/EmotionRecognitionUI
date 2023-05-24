@@ -60,6 +60,13 @@ public class GameViewModel: ViewModelBase
 
     }
     
+    private string _textBoxForeground = "White";
+    public string TextBoxForeground
+    {
+        get => _textBoxForeground;
+        set => this.RaiseAndSetIfChanged(ref _textBoxForeground, value);
+    }
+    
 
     public GameViewModel(IYandexDriveService yandexDriveService, IEventAggregator eventAggregator)
     {
@@ -69,6 +76,10 @@ public class GameViewModel: ViewModelBase
         ChooseLabelCommand = new DelegateCommand<string>(OnChooseLabel);
         _answers = new List<string>();
         Scoring = "";
+        _eventAggregator.GetEvent<ChangeThemeModeEvent>().Subscribe((foreground) =>
+        {
+            TextBoxForeground = foreground;
+        });
 
     }
 
@@ -107,7 +118,8 @@ public class GameViewModel: ViewModelBase
         _eventAggregator.GetEvent<OpenAnswerPageEvent>().Publish(new AnswerModel()
         {
             IsCorrect = _images[ImageIndex].Label.ToLower().Contains(label.ToLower()),
-            CorrectAnswer = _images[ImageIndex].Label.ToLower()
+            CorrectAnswer = _images[ImageIndex].Label.ToLower(),
+            Image = Image
         });
         _answers.Add(label);
     }

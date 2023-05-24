@@ -16,6 +16,13 @@ public class ResultViewModel: ViewModelBase
     public string Accuracy { get; set; }
 
     public ICommand RefreshCommand { get; }
+    
+    private string _textBoxForeground = "White";
+    public string TextBoxForeground
+    {
+        get => _textBoxForeground;
+        set => this.RaiseAndSetIfChanged(ref _textBoxForeground, value);
+    }
 
 
     public ResultViewModel(ScoringModel scoreModel, IEventAggregator eventAggregator)
@@ -24,6 +31,11 @@ public class ResultViewModel: ViewModelBase
         Score = $"Правильных ответов {scoreModel.CorrectAnswers} из {scoreModel.AnswersCount}";
         Accuracy = $"Ваша точность {(scoreModel.Accuracy * 100):N2} %";
         RefreshCommand = new DelegateCommand(OnRefresh);
+        
+        eventAggregator.GetEvent<ChangeThemeModeEvent>().Subscribe((foreground) =>
+        {
+            TextBoxForeground = foreground;
+        });
     }
 
     private void OnRefresh()
